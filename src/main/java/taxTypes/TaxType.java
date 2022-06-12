@@ -1,4 +1,4 @@
-package taxType;
+package taxTypes;
 
 public class TaxType {
 

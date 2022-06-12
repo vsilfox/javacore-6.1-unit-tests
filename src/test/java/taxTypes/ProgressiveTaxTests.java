@@ -1,21 +1,22 @@
+package taxTypes;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import taxType.ProgressiveTax;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProgressiveTaxTests {
-    ProgressiveTax sut;
+    private ProgressiveTax testProgressiveTax;
 
     @BeforeEach
     public void started() {
         System.out.println("test started");
-        sut = new ProgressiveTax();
+        testProgressiveTax = new ProgressiveTax();
     }
 
     @AfterEach
@@ -26,7 +27,7 @@ public class ProgressiveTaxTests {
     @ParameterizedTest
     @MethodSource("source")
     public void testCalculateTaxFor(double amount, double expected) {
-        double result = sut.calculateTaxFor(amount);
+        double result = testProgressiveTax.calculateTaxFor(amount);
         assertEquals(expected, result);
     }
 

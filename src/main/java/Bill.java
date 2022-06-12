@@ -1,4 +1,4 @@
-import taxType.*;
+import taxTypes.*;
 
 public class Bill {
     private double amount;

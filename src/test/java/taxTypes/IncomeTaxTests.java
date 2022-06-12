@@ -1,17 +1,18 @@
+package taxTypes;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import taxType.VATax;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class VATaxTests {
-    VATax sut;
+public class IncomeTaxTests {
+    private IncomeTax testIncomeTax;
 
     @BeforeEach
     public void started() {
         System.out.println("test started");
-        sut = new VATax();
+        testIncomeTax = new IncomeTax();
     }
 
     @AfterEach
@@ -21,8 +22,8 @@ public class VATaxTests {
 
     @Test
     public void testCalculateTaxFor() {
-        double amount = 900, expected = 162;
-        double result = sut.calculateTaxFor(amount);
+        double amount = 100000, expected = 13000;
+        double result = testIncomeTax.calculateTaxFor(amount);
         assertEquals(expected, result);
     }
 }
